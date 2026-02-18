@@ -2,9 +2,8 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import twilio from "twilio";
-import dotenv from "dotenv";
+import 'dotenv/config';
 
-dotenv.config();
 
 const app = express();
 app.use(cors());
