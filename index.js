@@ -6,7 +6,12 @@ import 'dotenv/config';
 
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://front-fdxc6jsya-fadi-mahers-projects.vercel.app",
+    credentials: true, // لو هتستخدم كوكيز أو auth
+  })
+);
 app.use(express.json());
 
 // connect MongoDB
