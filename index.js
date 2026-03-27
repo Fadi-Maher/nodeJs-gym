@@ -9,19 +9,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ربط MongoDB
+// connect MongoDB
+
 mongoose
   .connect(process.env.MONGO_URI)
 
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
-//Schema
+//Schema of player
 const playerSchema = new mongoose.Schema({
   name: String,
   phone: String,
   desc: String,
   sessions: { type: Number, default: 0 },
+  
 });
 
 const Player = mongoose.model("Player", playerSchema);
