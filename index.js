@@ -6,12 +6,7 @@ import 'dotenv/config';
 
 
 const app = express();
-app.use(
-  cors({
-    origin: "https://front-fdxc6jsya-fadi-mahers-projects.vercel.app",
-    credentials: true, // لو هتستخدم كوكيز أو auth
-  })
-);
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // connect MongoDB
@@ -28,7 +23,6 @@ const playerSchema = new mongoose.Schema({
   phone: String,
   desc: String,
   sessions: { type: Number, default: 0 },
-  
 });
 
 const Player = mongoose.model("Player", playerSchema);
