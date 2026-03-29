@@ -9,6 +9,7 @@ const app = express();
 // app.use(cors({ origin: "*" }));
 
 app.use(
+  
   cors({
     origin: function (origin, callback) {
       if (
@@ -22,7 +23,7 @@ app.use(
       }
     },
     credentials: true,
-    
+
   })
 );app.use(express.json());
 
